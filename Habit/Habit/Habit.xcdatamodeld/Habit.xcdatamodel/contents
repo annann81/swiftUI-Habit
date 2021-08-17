@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="19H2" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Award" representedClassName="Award" syncable="YES" codeGenerationType="class">
+        <attribute name="awardName" optional="YES" attributeType="String"/>
+        <attribute name="exchangeAmount" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="isCheck" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="systemName" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Group" representedClassName="Group" syncable="YES" codeGenerationType="class">
+        <attribute name="groupName" optional="YES" attributeType="String"/>
+        <relationship name="plans" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Plan" inverseName="group" inverseEntity="Plan"/>
+    </entity>
+    <entity name="Plan" representedClassName="Plan" syncable="YES" codeGenerationType="class">
+        <attribute name="award" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="isCheck" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="planName" optional="YES" attributeType="String"/>
+        <attribute name="systemName" optional="YES" attributeType="String"/>
+        <relationship name="group" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="Group" inverseName="plans" inverseEntity="Group"/>
+    </entity>
+    <entity name="TotlAward" representedClassName="TotlAward" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="num" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <elements>
+        <element name="Plan" positionX="-302.72265625" positionY="23.80859375" width="128" height="118"/>
+        <element name="Group" positionX="-491.2890625" positionY="29.2890625" width="128" height="73"/>
+        <element name="Award" positionX="-324.1875" positionY="176.4296875" width="128" height="103"/>
+        <element name="TotlAward" positionX="-502.98046875" positionY="183.2421875" width="128" height="73"/>
+    </elements>
+</model>
